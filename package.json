@@ -1,0 +1,22 @@
+{
+  "name": "streams-logger-benchmark",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build:streams-logger": "rm -rf ./streams-logger/dist/* && tsc --build ./streams-logger",
+    "build:winston": "rm -rf ./winston/dist/* && tsc --build ./winston",
+    "build": "rm -rf ./dist/* && tsc --build .",
+    "build:all": "npm run build && npm run build:streams-logger && npm run build:winston",
+    "start": "npm run build:all && node ."
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10"
+  },
+  "type": "module"
+}
