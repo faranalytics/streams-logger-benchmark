@@ -17,7 +17,7 @@ async function request(iterations: number) {
     return Promise.allSettled(reqs);
 }
 
-function aggregate(result: { [key: string]: Array<{ [key: string]: number }> }) {
+function aggregate(result: { [key: string]: Array<{ [key: string]: number }> }, testCount: number) {
     for (let [name, arr] of Object.entries(result)) {
         const agg = arr.reduce((acc: any, curr: any) => {
             if (!acc) {
@@ -28,8 +28,8 @@ function aggregate(result: { [key: string]: Array<{ [key: string]: number }> }) 
             }
             return acc;
         }, null);
-        for (let [key, value] of Object.entries(agg)) {
-            agg[key] = agg[key] / TEST_COUNT;
+        for (let [key, value] of Object.entries<number>(agg)) {
+            agg[key] = value / testCount;
             if (key == 'time') {
                 agg[key] = agg[key] + 'ms';
             }
@@ -48,18 +48,17 @@ const MODULES = {
     streams: './tests/streams/dist/index.js',
 }
 
-const TEST_COUNT = 100;
-const REQUEST_ITERATIONS = 1e4;
-
+const testCount = Number(process.argv[2]);
+const requestCount = Number(process.argv[3]);;
 const result: Record<string, any> = {};
 
-for (let i = 0; i < TEST_COUNT; i++) {
+for (let i = 0; i < testCount; i++) {
     for (let [name, path] of Object.entries(MODULES)) {
         const f = cp.fork(path);
         f.on('message', async (message: any) => {
             const { event, data } = message;
             if (event == 'ready') {
-                await request(REQUEST_ITERATIONS);
+                await request(requestCount);
                 f.send({ event: 'exit' });
             }
             else if (event == 'result') {
@@ -73,4 +72,4 @@ for (let i = 0; i < TEST_COUNT; i++) {
     }
 }
 
-console.log(aggregate(result));
+console.log(aggregate(result, testCount));
