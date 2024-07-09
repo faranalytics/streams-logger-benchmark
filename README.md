@@ -9,7 +9,7 @@ This package provides a rough benchmark comparison between *Streams*, Pino, and 
 
 ## Method
 
-1. Receive 1000 HTTP requests and use the respective logger to log the body of each request to the console.  
+1. Receive 1000 concurrent HTTP requests and log each request to the console.
 2. Repeat (1) 100 times.
 3. Calculate the mean time and memory usage of each iteration.
 
