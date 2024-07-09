@@ -2,7 +2,8 @@
 
 This package provides a rough benchmark comparison between *Streams*, Pino, and Winston.  The comparison may be more or less fair, as there may be optimizations specific to a particular package that were not implemented - *this is a work in progress*.  Please see the implementations for details.  The goal is to determine if *Streams* performs roughly similar to other loggers given similar environmental conditions.
 
-## Implementations
+## Materials
+
 - [Streams](https://github.com/faranalytics/streams-logger-benchmark/blob/main/tests/streams/src/index.ts)
 - [Pino](https://github.com/faranalytics/streams-logger-benchmark/blob/main/tests/pino/src/index.ts)
 - [Winston](https://github.com/faranalytics/streams-logger-benchmark/blob/main/tests/winston/src/index.ts)
@@ -45,3 +46,4 @@ This package provides a rough benchmark comparison between *Streams*, Pino, and 
   }
 }
 ```
+## Discussion
