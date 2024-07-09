@@ -7,7 +7,7 @@ This package provides a rough benchmark comparison between *Streams*, Pino, and 
 - [Pino](https://github.com/faranalytics/streams-logger-benchmark/blob/main/tests/pino/src/index.ts)
 - [Winston](https://github.com/faranalytics/streams-logger-benchmark/blob/main/tests/winston/src/index.ts)
 
-## Method
+## Methods
 
 1. Receive 1000 concurrent HTTP requests and log each request to the console.
 2. Repeat (1) 100 times.
