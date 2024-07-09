@@ -1,5 +1,5 @@
 {
-  "name": "winston",
+  "name": "streams-logger",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "scripts": {},
@@ -7,9 +7,9 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "typescript": "^5.5.3",
-    "winston": "^3.13.0",
-    "streams-logger-benchmark": ".."
+    "streams-logger": "~0.1.0",
+    "streams-logger-benchmark": "../..",
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
     "@types/node": "^20.14.10"

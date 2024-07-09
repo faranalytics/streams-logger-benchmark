@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "scripts": {
-    "build:streams-logger": "rm -rf ./streams-logger/dist/* && tsc --build ./streams-logger",
-    "build:winston": "rm -rf ./winston/dist/* && tsc --build ./winston",
+    "build:streams": "rm -rf ./test/streams/dist/* && tsc --build ./tests/streams",
+    "build:winston": "rm -rf ./test/winston/dist/* && tsc --build ./tests/winston",
+    "build:pino": "rm -rf ./test/pino/dist/* && tsc --build ./tests/pino",
     "build": "rm -rf ./dist/* && tsc --build .",
-    "build:all": "npm run build && npm run build:streams-logger && npm run build:winston",
-    "start": "npm run build:all && node ."
+    "start": "npm run build && npm run build:streams && npm run build:winston && npm run build:pino && node . "
   },
   "author": "",
   "license": "MIT",
