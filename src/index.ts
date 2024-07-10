@@ -5,7 +5,7 @@ import { once } from 'node:events';
 async function request(iterations: number) {
     const reqs = []
     for (let i = 0; i < iterations; i++) {
-        const DATA = 'Hello, World!'.repeat(1e1);
+        const DATA = 'Hello, World!';
         const req = http.request({
             'hostname': '127.0.0.1', 'port': 3000, 'method': 'GET', headers: {
                 'Content-Length': Buffer.byteLength(DATA),

@@ -7,11 +7,12 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "streams-logger": "~0.1.0",
+    "streams-logger": "^0.1.5",
     "streams-logger-benchmark": "../..",
     "typescript": "^5.5.3"
   },
   "devDependencies": {
     "@types/node": "^20.14.10"
-  }
+  },
+  "type": "module"
 }

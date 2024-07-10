@@ -10,6 +10,8 @@
   "description": "",
   "dependencies": {
     "pino": "^9.2.0",
+    "pino-pretty": "^11.2.1",
     "streams-logger-benchmark": "../.."
-  }
+  },
+  "type": "module"
 }
