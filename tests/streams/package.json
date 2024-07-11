@@ -7,7 +7,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "streams-logger": "^0.1.5",
+    "streams-logger": "../../../streams-logger",
     "streams-logger-benchmark": "../..",
     "typescript": "^5.5.3"
   },
