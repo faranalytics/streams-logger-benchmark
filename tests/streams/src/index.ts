@@ -6,9 +6,9 @@ import { test } from 'streams-logger-benchmark/dist/test.js';
 stream.setDefaultHighWaterMark(true, 1e6);
 stream.setDefaultHighWaterMark(false, 1e6);
 
-Config.setDefaultHighWaterMark(true, 1e6);
-Config.setDefaultHighWaterMark(false, 1e6);
-Config.setCaptureStackTrace(false);
+Config.highWaterMark = 1e6;
+Config.highWaterMarkObjectMode = 1e6;
+Config.captureStackTrace = false;
 
 
 if (fs.existsSync('streams.log')) {
