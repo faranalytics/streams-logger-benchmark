@@ -12,7 +12,7 @@ This package provides a rough benchmark comparison between *Streams*, Pino, and 
 
 ## Methods
 
-The loggers are configured to log a message that roughly resembles `2024-07-10T02:31:33.797Z INFO: Hello, World!`.
+The loggers are configured to log a message that roughly resembles `2024-07-10T02:31:33.797Z INFO: Hello, World!`. On each iteration the 
 
 ### Procedure
 1. Start a child process.
