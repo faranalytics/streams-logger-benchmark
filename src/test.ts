@@ -9,7 +9,7 @@ export function test(log: any) {
         });
         req.on('end', async () => {
             log.info(Buffer.concat(chunks).toString());
-            await new Promise((r) => setTimeout(r, 4));
+            // await new Promise((r) => setTimeout(r, 4));
             res.end('');
         });
     });

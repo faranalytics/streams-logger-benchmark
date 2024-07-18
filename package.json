@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "scripts": {
-    "build:streams": "rm -rf ./test/streams/dist/* && tsc --build ./tests/streams",
-    "build:winston": "rm -rf ./test/winston/dist/* && tsc --build ./tests/winston",
-    "build:pino": "rm -rf ./test/pino/dist/* && tsc --build ./tests/pino",
-    "build": "rm -rf ./dist/* && tsc --build .",
-    "start": "npm run build && npm run build:streams && npm run build:winston && npm run build:pino && node . "
+    "clean:build:streams": "rm -rf ./test/streams/dist/* && tsc --build ./tests/streams",
+    "clean:build:winston": "rm -rf ./test/winston/dist/* && tsc --build ./tests/winston",
+    "clean:build:pino": "rm -rf ./test/pino/dist/* && tsc --build ./tests/pino",
+    "clean:build": "rm -rf ./dist/* && tsc --build .",
+    "start": "npm run clean:build && npm run clean:build:streams && npm run clean:build:winston && npm run clean:build:pino && node . "
   },
   "author": "",
   "license": "MIT",
