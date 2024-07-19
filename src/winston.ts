@@ -1,11 +1,14 @@
+import './result.js';
 import * as stream from 'node:stream';
 import * as fs from 'node:fs';
 import { transports, createLogger, format } from 'winston';
-const { combine, timestamp, label, printf } = format;
-import { test } from 'streams-logger-benchmark/dist/test.js';
+import args from './args.js';
+const run = (await import(`./${args.test}.js`)).default;
 
 stream.setDefaultHighWaterMark(true, 1e6);
 stream.setDefaultHighWaterMark(false, 1e6);
+
+const { combine, timestamp, printf } = format;
 
 if (fs.existsSync('winston.log')) {
     fs.rmSync('winston.log');
@@ -28,4 +31,4 @@ const log = createLogger({
     ]
 });
 
-test(log);
+run(log);
