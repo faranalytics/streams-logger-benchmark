@@ -4,7 +4,8 @@
   "main": "./build/index.js",
   "scripts": {
     "clean:build": "rm -rf ./dist/* && tsc --build .",
-    "start": "npm run clean:build && node . "
+    "start": "npm run clean:build && node . ",
+    "watch": "npx tsc --watch"
   },
   "author": "",
   "license": "MIT",

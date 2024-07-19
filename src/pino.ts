@@ -25,7 +25,6 @@ const transport = pino.transport({
         {
             target: 'pino/file',
             options: {
-                ignore: 'pid,hostname',
                 destination: 'pino.log',
                 append: true,
             },
