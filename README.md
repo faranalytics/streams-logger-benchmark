@@ -14,7 +14,7 @@ This package provides a rough benchmark comparison between *Streams*, Pino, and 
 
 ### Hello, World!
 
-Each logger is configured to log a message that roughly resembles `2024-07-10T02:31:33.797Z INFO: Hello, World!`.  Each logger is ran once for each `iteration`.
+Each logger is configured to log a message that roughly resembles `2024-07-10T02:31:33.797Z INFO: Hello, World!`.  Each logger is ran once on each `iteration`.
 
 #### Procedure
 1. Start a child process.
