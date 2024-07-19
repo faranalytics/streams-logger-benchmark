@@ -22,15 +22,15 @@ const transport = pino.transport({
                 colorize: false,
             }
         },
-        {
-            target: 'pino/file',
-            options: {
-                translateTime: "yyyy-mm-dd HH:MM:ss.l",
-                ignore: 'pid,hostname',
-                colorize: false,
-                destination: 'pino.log', append: true,
-            },
-        }
+        // {
+        //     target: 'pino/file',
+        //     options: {
+        //         translateTime: "yyyy-mm-dd HH:MM:ss.l",
+        //         ignore: 'pid,hostname',
+        //         colorize: false,
+        //         destination: 'pino.log', append: true,
+        //     },
+        // }
     ]
 })
 

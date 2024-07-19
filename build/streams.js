@@ -1,7 +1,7 @@
 import './result.js';
 import * as stream from 'node:stream';
 import * as fs from 'node:fs';
-import { Logger, Formatter, ConsoleHandler, SyslogLevel, Config, RotatingFileHandler } from 'streams-logger';
+import { Logger, Formatter, ConsoleHandler, SyslogLevel, Config } from 'streams-logger';
 import args from './args.js';
 const run = (await import(`./${args.test}.js`)).default;
 stream.setDefaultHighWaterMark(true, 1e6);
@@ -19,6 +19,6 @@ const formatter = new Formatter({
     }
 });
 const consoleHandler = new ConsoleHandler({ level: SyslogLevel.DEBUG });
-const rotatingFileHandler = new RotatingFileHandler({ path: 'streams.log', level: SyslogLevel.DEBUG });
-const log = logger.connect(formatter.connect(consoleHandler, rotatingFileHandler));
+// const rotatingFileHandler = new RotatingFileHandler({ path: 'streams.log', level: SyslogLevel.DEBUG });
+const log = logger.connect(formatter.connect(consoleHandler));
 run(log);
