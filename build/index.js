@@ -2,7 +2,7 @@ import * as cp from 'node:child_process';
 import { once } from 'node:events';
 import { aggregate } from './aggregate.js';
 import args from './args.js';
-const iterations = parseInt(Number(args.iterations).toString());
+const iterations = parseInt(Number(args.iteration).toString());
 const test = args.test;
 const MODULES = {
     streams: './build/streams.js',

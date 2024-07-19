@@ -25,7 +25,7 @@ Each logger is configured to log a message that roughly resembles `2024-07-10T02
 3. Calculate the mean time and memory usage of each iteration.
 
 #### Run the Test
-`npm start iterations=1e1 test=hello_world`
+`npm start iteration=1e1 test=hello_world`
 
 ## Results
 
