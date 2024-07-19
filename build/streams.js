@@ -19,6 +19,6 @@ const formatter = new Formatter({
     }
 });
 const consoleHandler = new ConsoleHandler({ level: SyslogLevel.DEBUG });
-const rotatingFileHandler = new RotatingFileHandler({ path: 'streams.log', level: SyslogLevel.DEBUG });
+const rotatingFileHandler = new RotatingFileHandler({ path: 'streams.log', level: SyslogLevel.DEBUG, maxSize: 1e8 });
 const log = logger.connect(formatter.connect(consoleHandler, rotatingFileHandler));
 run(log);
