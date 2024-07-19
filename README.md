@@ -25,6 +25,7 @@ Each logger is configured to log a message to the console and a file that roughl
 3. Calculate the mean time and memory usage of each iteration.
 
 #### Run the Test
+
 `npm start iteration=1e1 test=hello_world`
 
 ## Results
