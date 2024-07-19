@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This package provides a rough benchmark comparison between *Streams*, Pino, and Winston.  The comparison may not take into account every optimization offered by each package - *this is a work in progress*.  Please see the implementations for details.  The goal here is to get a rough idea how *Streams* performs given various environments.
+This package provides a rough benchmark comparison between *Streams*, Pino, and Winston.  The comparison may not take into account every optimization offered by each package - *this is a work in progress*.  Please see the implementations for details.
 
 ## Materials
 
