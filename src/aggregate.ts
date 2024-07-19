@@ -1,5 +1,8 @@
-export function aggregate(result: { [key: string]: Array<{ [key: string]: number }> }, testCount: number) {
+export function aggregate(result: { [key: string]: Array<{ [key: string]: number }> }, length: number) {
     for (let [name, arr] of Object.entries(result)) {
+        if (arr.length !== length) {
+            throw new Error(`${length} !== ${arr.length}`)
+        }
         const agg = arr.reduce((acc: any, curr: any) => {
             if (!acc) {
                 return curr;
@@ -10,7 +13,7 @@ export function aggregate(result: { [key: string]: Array<{ [key: string]: number
             return acc;
         }, null);
         for (let [key, value] of Object.entries<number>(agg)) {
-            agg[key] = value / testCount;
+            agg[key] = value / length;
             if (key == 'time') {
                 agg[key] = agg[key] + 'ms';
             }

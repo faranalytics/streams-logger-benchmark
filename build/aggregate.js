@@ -1,5 +1,8 @@
-export function aggregate(result, testCount) {
+export function aggregate(result, length) {
     for (let [name, arr] of Object.entries(result)) {
+        if (arr.length !== length) {
+            throw new Error(`${length} !== ${arr.length}`);
+        }
         const agg = arr.reduce((acc, curr) => {
             if (!acc) {
                 return curr;
@@ -10,7 +13,7 @@ export function aggregate(result, testCount) {
             return acc;
         }, null);
         for (let [key, value] of Object.entries(agg)) {
-            agg[key] = value / testCount;
+            agg[key] = value / length;
             if (key == 'time') {
                 agg[key] = agg[key] + 'ms';
             }
