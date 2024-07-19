@@ -24,7 +24,7 @@ Each logger is configured to log a message that roughly resembles `2024-07-10T02
 5. Log Hello, World! to the console and to a file 10000 times.
 3. Calculate the mean time and memory usage of each iteration.
 
-#### Run
+#### Run the Test
 `npm start iterations=1e1 test=hello_world`
 
 ## Results
