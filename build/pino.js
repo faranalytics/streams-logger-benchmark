@@ -22,10 +22,9 @@ const transport = pino.transport({
         {
             target: 'pino/file',
             options: {
-                translateTime: "yyyy-mm-dd HH:MM:ss.l",
                 ignore: 'pid,hostname',
-                colorize: false,
-                destination: 'pino.log', append: true,
+                destination: 'pino.log',
+                append: true,
             },
         }
     ]
