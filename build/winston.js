@@ -14,12 +14,12 @@ const myFormat = printf(({ level, message, timestamp }) => {
     return `${timestamp} ${level}: ${message}`;
 });
 const consoleHandler = new transports.Console();
-// const fileHandler = new transports.File({ filename: 'winston.log' })
+const fileHandler = new transports.File({ filename: 'winston.log' });
 const log = createLogger({
     format: combine(timestamp(), myFormat),
     transports: [
         consoleHandler,
-        // fileHandler
+        fileHandler
     ]
 });
 run(log);
