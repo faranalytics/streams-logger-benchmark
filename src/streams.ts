@@ -16,7 +16,7 @@ if (fs.existsSync('streams.log')) {
     fs.rmSync('streams.log');
 }
 
-const logger = new Logger({ level: SyslogLevel.DEBUG, name: 'test', parent: null });
+const logger = new Logger({ level: SyslogLevel.DEBUG, name: 'test', parent: null, captureStackTrace:false });
 const formatter = new Formatter({
     format: async ({ isotime, message, level }) => {
         return `${isotime} ${level}: ${message}\n`;

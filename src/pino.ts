@@ -20,14 +20,17 @@ const transport = pino.transport({
                 translateTime: "yyyy-mm-dd HH:MM:ss.l",
                 ignore: 'pid,hostname',
                 colorize: false,
+                destination: 1
             }
         },
         {
-            target: 'pino/file',
+            target: "pino-pretty",
             options: {
-                destination: 'pino.log',
-                append: true,
-            },
+                translateTime: "yyyy-mm-dd HH:MM:ss.l",
+                ignore: 'pid,hostname',
+                colorize: false,
+                destination: 'pino.log'
+            }
         }
     ]
 })
