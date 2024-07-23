@@ -18,7 +18,7 @@ const fileHandler = new transports.File({ filename: 'winston.log' });
 const log = createLogger({
     format: combine(timestamp(), myFormat),
     transports: [
-        consoleHandler,
+        // consoleHandler,
         fileHandler
     ]
 });

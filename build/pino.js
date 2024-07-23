@@ -11,15 +11,15 @@ if (fs.existsSync('pino.log')) {
 }
 const transport = pino.transport({
     targets: [
-        {
-            target: "pino-pretty",
-            options: {
-                translateTime: "yyyy-mm-dd HH:MM:ss.l",
-                ignore: 'pid,hostname',
-                colorize: false,
-                destination: 1
-            }
-        },
+        // {
+        //     target: "pino-pretty",
+        //     options: {
+        //         translateTime: "yyyy-mm-dd HH:MM:ss.l",
+        //         ignore: 'pid,hostname',
+        //         colorize: false,
+        //         destination: 1
+        //     }
+        // },
         {
             target: "pino-pretty",
             options: {
