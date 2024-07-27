@@ -5,8 +5,8 @@ import { transports, createLogger, format } from 'winston';
 import args from './args.js';
 const run = (await import(`./${args.test}.js`)).default;
 
-stream.setDefaultHighWaterMark(true, 1e6);
-stream.setDefaultHighWaterMark(false, 1e6);
+stream.setDefaultHighWaterMark(true, 1e5);
+stream.setDefaultHighWaterMark(false, 1e5);
 
 const { combine, timestamp, printf } = format;
 

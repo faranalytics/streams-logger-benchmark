@@ -5,8 +5,8 @@ import { pino } from 'pino';
 import args from './args.js';
 const run = (await import(`./${args.test}.js`)).default;
 
-stream.setDefaultHighWaterMark(true, 1e6);
-stream.setDefaultHighWaterMark(false, 1e6);
+stream.setDefaultHighWaterMark(true, 1e5);
+stream.setDefaultHighWaterMark(false, 1e5);
 
 if (fs.existsSync('pino.log')) {
     fs.rmSync('pino.log');

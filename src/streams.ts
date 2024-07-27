@@ -5,18 +5,18 @@ import { Logger, Formatter, ConsoleHandler, SyslogLevel, Config, RotatingFileHan
 import args from './args.js';
 const run = (await import(`./${args.test}.js`)).default;
 
-stream.setDefaultHighWaterMark(true, 1e6);
-stream.setDefaultHighWaterMark(false, 1e6);
+// stream.setDefaultHighWaterMark(true, 1e5);
+// stream.setDefaultHighWaterMark(false, 1e5);
 
-Config.highWaterMark = 1e6;
-Config.highWaterMarkObjectMode = 1e6;
-Config.captureStackTrace = false;
+Config.highWaterMark = 1e5;
+Config.highWaterMarkObjectMode = 1e5;
+// Config.captureStackTrace = false;
 
 if (fs.existsSync('streams.log')) {
     fs.rmSync('streams.log');
 }
 
-const logger = new Logger({ level: SyslogLevel.DEBUG, name: 'test', parent: null, captureStackTrace:false });
+const logger = new Logger({ level: SyslogLevel.DEBUG, name: 'test', parent: null, captureStackTrace: false });
 const formatter = new Formatter({
     format: async ({ isotime, message, level }) => {
         return `${isotime} ${level}: ${message}\n`;
