@@ -20,13 +20,13 @@ Each logger is configured to log a message to the console and a file that roughl
 1. Start a child process.
 2. Start the timer.
 3. Configure the logger.
-4. Run the specified test `hello_world.js`.
+4. Run the specified test `hello_world.js` 1e2 times.
 5. Log Hello, World! to the console and to a file 10000 times.
 3. Calculate the mean time and memory usage of each iteration.
 
 #### Run the Test
 
-`npm start iteration=1e1 test=hello_world`
+`npm start iteration=1e2 test=hello_world`
 
 ## Results
 
